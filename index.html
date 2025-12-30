@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>ポートフォリオ | ハラ ソウゴ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ポートフォリオ">
+  <meta name="description" content="作品集">
 <link rel="stylesheet" href="style.css" type="text/css">
 <link rel="shortcut icon" href="assets/favicon.ico">
 </head>
@@ -27,7 +27,7 @@
 
     <!-- 代表作品 -->
     <section id="works">
-      <h2 class="title">制作物</h2>
+      <h2 class="title">自信作</h2>
       <div class="works-grid">
         <article class="work-card clickable">
             <!-- 作品サムネイル画像 -->
@@ -41,7 +41,7 @@
             <span class="work-tag tag-cpp">C++</span>
             <span class="work-tag tag-directx">DirectX11</span>
             <span class="work-tag tag-etc">3Dアクション</span>
-          <h3>3Dアクションゲーム</h3>
+          <h3>これまで学んだことの集大成</h3>
           <p>
             ■制作時期 / 期間<br>
             　2025年 11月～ / 制作中<br>
@@ -51,7 +51,7 @@
             独自エンジンを使って制作し、プレイヤーのステート管理やエネミー挙動、画面エフェクトなどを一通り実装しました。<br>
           </p>
           <p>
-            <!-- 動画: <a href="#" target="_blank">YouTubeリンク</a><br> -->
+            動画: <a href="#" target="_blank">準備中</a>
           </p>
         </article>
 
@@ -67,7 +67,7 @@
             <span class="work-tag tag-cpp">C++</span>
             <span class="work-tag tag-directx">DirectX11</span>
             <span class="work-tag tag-etc">ゲームエンジン</span>
-          <h3>独自エンジン</h3>
+          <h3>独自エンジンの開発に挑戦</h3>
           <p>
             ■制作時期 / 期間<br>
                 2025年 6月～ / ゲームを作りつつ改良中<br>
@@ -79,7 +79,7 @@
             操作感の検証サイクルを高速化できるエンジンを目指しました。
           </p>
           <p>
-            <!-- 動画: <a href="#" target="_blank">YouTubeリンク</a><br> -->
+            動画: <a href="#" target="_blank">準備中</a>
           </p>
         </article>
             <!-- <span class="work-tag tag-unity">Unity</span> -->
@@ -131,7 +131,7 @@
             <span class="work-tag tag-directx">DirectX11</span>
             <span class="work-tag tag-award">受賞済み</span>
             <span class="work-tag tag-etc">2.5D</span>
-          <h3>進級制作展/ゲームクリエイター甲子園</h3>
+          <h3>初めてのチーム制作/ゲームクリエイター甲子園</h3>
           <p>
             ■制作時期 / 期間<br>
             　　2024年 10月 ～ 2月末 / 5ヵ月<br>
@@ -150,6 +150,10 @@
           </p>
         </article>
       </div>
+
+        <div class="more-works-button-wrapper">
+          <a class="more-works-button" href="more_works.html">その他の作品を見る</a>
+        </div>
     </section>
 
     <!-- 開発スタンス / こだわり -->
@@ -197,38 +201,6 @@
 </body>
 
 
-<script>
-function shakeWindow() {
-  document.body.classList.add('shake-window');
-  document.body.addEventListener('animationend', () => {
-    document.body.classList.remove('shake-window');
-  }, { once: true });
-}
-
-document.querySelectorAll('.clickable').forEach(card => {
-  card.addEventListener('click', () => {
-    shakeWindow();
-    card.classList.add('shake');
-    card.addEventListener('animationend', () => {
-      card.classList.remove('shake');
-    }, { once: true });
-  });
-});
-
-document.addEventListener('click', (e) => {
-  const effect = document.createElement('div');
-  effect.classList.add('click-effect');
-  effect.style.left = `${e.clientX}px`;
-  effect.style.top = `${e.clientY}px`;
-
-  document.body.appendChild(effect);
-
-  effect.addEventListener('animationend', () => {
-    effect.remove();
-  });
-});
-
-</script>
-
+<script src="main.js"></script>
 
 </html>
