@@ -1,0 +1,379 @@
+@font-face {
+  font-family: "NotoSansJP-Bold";
+  src: url("assets/fonts/NotoSansJP-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NotoSansJP-Black";
+  src: url("assets/fonts/NotoSansJP-Black.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DelaGothicOne";
+  src: url("assets/fonts/DelaGothicOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: "NotoSansJP-Bold", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #222;
+    
+  /* しましま背景 */
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.005) 0px,
+    rgba(0,0,0,0.005) 800px,
+    rgba(0,0,0,0.03) 800px,
+    rgba(0,0,0,0.03) 1600px
+  );
+
+  background-size: 200% 100%;
+  animation: stripe-slideBig 32s linear infinite;
+}
+header {
+    background: #111827;
+    color: #fff;
+    padding: 24px 16px;
+    text-align: center;
+    
+  /* しましま背景 */
+  background: repeating-linear-gradient(
+    45deg,
+    #111827 0px,
+    #111827 20px,
+    rgb(10, 0, 25) 20px,
+    rgb(10, 0, 25) 40px
+  );
+
+  background-size: 200% 100%;
+  animation: stripe-slide 4s linear infinite;
+}
+header h1 {
+    font-family: "DelaGothicOne", sans-serif;
+    margin: 0;
+    font-size: 1.8rem;
+}
+header p {
+    font-family: "NotoSansJP-Black", sans-serif;
+    margin: 8px 0 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px;
+    
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+
+  margin: 16px 0;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 2px solid #444;
+
+  /* しましま背景 */
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(0,0,0,0.003) 0px,
+    rgba(0,0,0,0.003) 20px,
+    rgba(0,0,0,0.02) 20px,
+    rgba(0,0,0,0.02) 40px
+  );
+
+  background-size: 200% 100%;
+  animation: stripe-slide 4s linear infinite;
+}
+
+@keyframes stripe-slide {
+  0%   { background-position: 0 0; }
+  100% { background-position: -225px 0; }
+}
+
+@keyframes stripe-slideBig {
+  0%   { background-position: 0 0; }
+  100% { background-position: -9000px 0; }
+}
+
+
+
+.title {
+    background: #fff;
+    margin-top: 0;
+    border-left: 4px solid #3b82f6;
+    padding-left: 8px;
+    font-family: "NotoSansJP-Black", sans-serif;
+    font-size: 1.2rem;
+}
+.tabtitle {
+  font-family: "NotoSansJP-Black", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid #3b82f6; /* アクセントライン */
+  color: #111;
+}
+.gametitle {
+  font-family: "NotoSansJP-Black", sans-serif;
+  background: repeating-linear-gradient(
+    45deg,
+    #111827 0px,
+    #111827 20px,
+    rgb(10, 0, 25) 20px,
+    rgb(10, 0, 25) 40px
+  );
+
+  background-size: 200% 100%;
+  animation: stripe-slide 4s linear infinite;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px 6px 0 0;
+  font-size: 1.2rem;
+  margin: -16px -16px 12px -16px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* タイトルとチーム名の間隔 */
+}
+
+.title-text {
+  font-weight: 700;
+}
+
+.team-label {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #e5e7eb;
+  color: #374151;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+/* 共通スタイル（サイズ・角丸など） */
+.work-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  color: #fff; /* デフォルトは白文字 */
+}
+
+/* --- 技術タグ --- */
+
+/* C++ → 濃い青 */
+.tag-cpp {
+  background-color: #2563eb;
+}
+
+/* C# → 紫 */
+.tag-csharp {
+  background-color: #7c3aed;
+}
+
+/* DirectX → 黒に近いダークグレー */
+.tag-directx {
+  background-color: #1f2937;
+}
+
+/* Unity → 黒ベースのロゴイメージに合わせたグレー */
+.tag-unity {
+  background-color: #4b5563;
+}
+
+/* RE → 黒に近いダークグレー */
+.tag-re {
+  background-color: #01050a;
+}
+/* --- 制作形態タグ --- */
+
+/* チーム制作 → 緑 */
+.tag-team {
+  background-color: #059669;
+}
+
+/* 個人制作 → オレンジ */
+.tag-solo {
+  background-color: #ea580c;
+}
+
+.tag-award {
+  display: inline-block;
+  padding: 2px 8px;
+  background: linear-gradient(135deg, #f7d774, #e6b422); /* 金色のグラデーション */
+  color: #4a3b0a; /* 読みやすい濃いブラウン */
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  border: 1px solid #d1a84c; /* 金属感のある縁取り */
+}
+
+.tag-etc {
+  background-color:#909090;
+}
+
+.work-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.works-grid {
+    display: grid;
+    gap: 12px;
+}
+/* スマホ：1列（デフォルト） */
+
+/* 2列 */
+@media (min-width: 768px) {
+  .works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 
+@media (min-width: 1280px) {
+  .works-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+} */
+
+.work-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  /* しましま背景 */
+  background: repeating-linear-gradient(
+    -45deg,
+    #f6f6f9 0px,
+    #f6f6f9 20px,
+    #f9fafb 20px,
+    #f9fafb 40px
+  );
+  background-size: 200% 100%;
+  animation: stripe-slide 4s linear infinite;
+}
+.work-card h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+}
+.work-meta {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #6b7280;
+    padding: 24px 0 32px;
+}
+
+/* クリック時のアニメーション */
+.clickable.shake {
+  animation: flash-shake 1.2s cubic-bezier(.36,.07,.19,.97);
+}
+@keyframes flash-shake {
+  0%   { transform: translateX(0);    background-color: rgba(255,255,255,1.0); }
+
+  5%   { transform: translateX(-22px); background-color: rgba(255,255,255,0.3); }
+  10%  { transform: translateX(22px);  background-color: rgba(255,255,255,0.8); }
+
+  15%  { transform: translateX(-20px); background-color: rgba(255,255,255,0.25); }
+  20%  { transform: translateX(20px);  background-color: rgba(255,255,255,0.7); }
+
+  25%  { transform: translateX(-18px); background-color: rgba(255,255,255,0.2); }
+  30%  { transform: translateX(18px);  background-color: rgba(255,255,255,0.6); }
+
+  35%  { transform: translateX(-16px); background-color: rgba(255,255,255,0.18); }
+  40%  { transform: translateX(16px);  background-color: rgba(255,255,255,0.5); }
+
+  45%  { transform: translateX(-14px); background-color: rgba(255,255,255,0.15); }
+  50%  { transform: translateX(14px);  background-color: rgba(255,255,255,0.4); }
+
+  55%  { transform: translateX(-12px); background-color: rgba(255,255,255,0.12); }
+  60%  { transform: translateX(12px);  background-color: rgba(255,255,255,0.3); }
+
+  65%  { transform: translateX(-10px); background-color: rgba(255,255,255,0.1); }
+  70%  { transform: translateX(10px);  background-color: rgba(255,255,255,0.25); }
+
+  75%  { transform: translateX(-8px);  background-color: rgba(255,255,255,0.08); }
+  80%  { transform: translateX(8px);   background-color: rgba(255,255,255,0.18); }
+
+  85%  { transform: translateX(-6px);  background-color: rgba(255,255,255,0.06); }
+  90%  { transform: translateX(6px);   background-color: rgba(255,255,255,0.12); }
+
+  95%  { transform: translateX(-3px);  background-color: rgba(255,255,255,0.03); }
+  100% { transform: translateX(0);     background-color: rgba(255,255,255,0); }
+}
+
+/* body に揺れアニメーションを付けるクラス */
+.shake-window {
+  animation: window-shake 0.6s cubic-bezier(.36,.07,.19,.97);
+}
+
+/* 縦揺れアニメーション */
+@keyframes window-shake {
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(-20px); }
+  20%  { transform: translateY(20px); }
+  30%  { transform: translateY(-15px); }
+  40%  { transform: translateY(15px); }
+  50%  { transform: translateY(-10px); }
+  60%  { transform: translateY(10px); }
+  70%  { transform: translateY(-6px); }
+  80%  { transform: translateY(6px); }
+  90%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+.click-effect {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: rgba(22, 42, 65, 0.8);
+  transform: translate(-50%, -50%) scale(0);
+  animation: click-burst 0.5s ease-out forwards;
+}
+
+@keyframes click-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(3.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4.0);
+    opacity: 0;
+  }
+}
