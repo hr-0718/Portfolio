@@ -28,3 +28,41 @@ document.addEventListener('click', (e) => {
     effect.remove();
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const checks = document.querySelectorAll(".filter-check");
+  const cards = document.querySelectorAll(".work-card");
+
+  function applyFilter() {
+    // ON になっているチェックボックスの value を配列で取得
+    const activeFilters = [...checks]
+      .filter(ch => ch.checked)
+      .map(ch => ch.value);
+
+    // 何も選択されていない → 全表示
+    if (activeFilters.length === 0) {
+      cards.forEach(card => card.classList.remove("hidden"));
+      return;
+    }
+
+    cards.forEach(card => {
+      const tags = [...card.querySelectorAll(".work-tag")];
+
+      // AND 条件：すべての activeFilters を持っているか？
+      const match = activeFilters.every(filter =>
+        tags.some(tag => tag.classList.contains(filter))
+      );
+
+      if (match) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+  }
+
+  // チェックボックスが変わるたびにフィルタ適用
+  checks.forEach(ch => ch.addEventListener("change", applyFilter));
+});

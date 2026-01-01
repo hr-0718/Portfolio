@@ -232,6 +232,18 @@ section {
     #167198 120px
   );
 }
+/* プレイ可能 → グリーン */
+.tag-playable {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #16a34a; /* 明るめの緑 */
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
 
 .tag-etc {
   background-color:#909090;
@@ -413,4 +425,88 @@ footer {
     transform: translate(-50%, -50%) scale(4.0);
     opacity: 0;
   }
+}
+
+.filter-bar button {
+  margin: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.filter-bar label {
+  margin-right: 12px;
+  cursor: pointer;
+}
+.work-card {
+  transition: opacity 0.2s ease;
+}
+
+.work-card.hidden {
+  display: none;
+}
+
+.filter-box {
+  border: 2px solid #ddd;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  background: #fafafa;
+}
+
+.filter-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+/* 既存のタグ色がそのままフィルタにも適用される */
+.filter-item.tag-cpp      { background-color: #2563eb; }
+.filter-item.tag-csharp   { background-color: #7c3aed; }
+.filter-item.tag-directx  { background-color: #1f2937; }
+.filter-item.tag-unity    { background-color: #4b5563; }
+.filter-item.tag-re       { background-color: #01050a; }
+
+.filter-item.tag-team     { background-color: #059669; }
+.filter-item.tag-solo     { background-color: #ea580c; }
+
+.filter-item.tag-award {
+  background: linear-gradient(135deg, #f7d774, #e6b422);
+  color: #4a3b0a;
+  border: 1px solid #d1a84c;
+}
+
+.filter-item.tag-swi {
+  background: repeating-linear-gradient(
+    90deg,
+    #d51e1e 0px,
+    #d51e1e 65px,
+    #167198 65px,
+    #167198 120px
+  );
+}
+
+.filter-item.tag-playable { background-color: #16a34a; }
+.filter-item.tag-etc      { background-color:#909090; }
+
+.filter-item input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: white; /* 白チェックで見やすい */
 }
