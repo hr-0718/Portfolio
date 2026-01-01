@@ -66,7 +66,7 @@ header p {
     opacity: 0.9;
 }
 main {
-    max-width: 960px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 16px;
     
@@ -224,13 +224,7 @@ section {
 }
 
 .tag-swi {
-  background: repeating-linear-gradient(
-    90deg,
-    #d51e1e 0px,
-    #d51e1e 65px,
-    #167198 65px,
-    #167198 120px
-  );
+  background-color: #d51e1e;
 }
 /* プレイ可能 → グリーン */
 .tag-playable {
@@ -254,7 +248,10 @@ section {
   height: auto;
   border-radius: 6px 6px 0 0;
   margin-bottom: 12px;
-  object-fit: cover;
+  
+  aspect-ratio: 16 / 9; /* 好きな比率に統一 */
+  object-fit: contain;  /* 画像を縮小して全体を表示 */
+  background-color: #000; /* 黒背景（透明にしたいなら transparent） */
 }
 
 .works-grid {
@@ -350,34 +347,34 @@ footer {
 @keyframes flash-shake {
   0%   { transform: translateX(0);    background-color: rgba(255,255,255,1.0); }
 
-  5%   { transform: translateX(-22px); background-color: rgba(255,255,255,0.3); }
-  10%  { transform: translateX(22px);  background-color: rgba(255,255,255,0.8); }
+  5%   { transform: translateX(-5px); background-color: rgba(255,255,255,0.3); }
+  10%  { transform: translateX(5px);  background-color: rgba(255,255,255,0.8); }
 
-  15%  { transform: translateX(-20px); background-color: rgba(255,255,255,0.25); }
-  20%  { transform: translateX(20px);  background-color: rgba(255,255,255,0.7); }
+  15%  { transform: translateX(-5px); background-color: rgba(255,255,255,0.25); }
+  20%  { transform: translateX(5px);  background-color: rgba(255,255,255,0.7); }
 
-  25%  { transform: translateX(-18px); background-color: rgba(255,255,255,0.2); }
-  30%  { transform: translateX(18px);  background-color: rgba(255,255,255,0.6); }
+  25%  { transform: translateX(-4px); background-color: rgba(255,255,255,0.2); }
+  30%  { transform: translateX(4px);  background-color: rgba(255,255,255,0.6); }
 
-  35%  { transform: translateX(-16px); background-color: rgba(255,255,255,0.18); }
-  40%  { transform: translateX(16px);  background-color: rgba(255,255,255,0.5); }
+  35%  { transform: translateX(-4px); background-color: rgba(255,255,255,0.18); }
+  40%  { transform: translateX(4px);  background-color: rgba(255,255,255,0.5); }
 
-  45%  { transform: translateX(-14px); background-color: rgba(255,255,255,0.15); }
-  50%  { transform: translateX(14px);  background-color: rgba(255,255,255,0.4); }
+  45%  { transform: translateX(-3px); background-color: rgba(255,255,255,0.15); }
+  50%  { transform: translateX(3px);  background-color: rgba(255,255,255,0.4); }
 
-  55%  { transform: translateX(-12px); background-color: rgba(255,255,255,0.12); }
-  60%  { transform: translateX(12px);  background-color: rgba(255,255,255,0.3); }
+  55%  { transform: translateX(-3px); background-color: rgba(255,255,255,0.12); }
+  60%  { transform: translateX(3px);  background-color: rgba(255,255,255,0.3); }
 
-  65%  { transform: translateX(-10px); background-color: rgba(255,255,255,0.1); }
-  70%  { transform: translateX(10px);  background-color: rgba(255,255,255,0.25); }
+  65%  { transform: translateX(-2px); background-color: rgba(255,255,255,0.1); }
+  70%  { transform: translateX(2px);  background-color: rgba(255,255,255,0.25); }
 
-  75%  { transform: translateX(-8px);  background-color: rgba(255,255,255,0.08); }
-  80%  { transform: translateX(8px);   background-color: rgba(255,255,255,0.18); }
+  75%  { transform: translateX(-2px);  background-color: rgba(255,255,255,0.08); }
+  80%  { transform: translateX(2px);   background-color: rgba(255,255,255,0.18); }
 
-  85%  { transform: translateX(-6px);  background-color: rgba(255,255,255,0.06); }
-  90%  { transform: translateX(6px);   background-color: rgba(255,255,255,0.12); }
+  85%  { transform: translateX(-1px);  background-color: rgba(255,255,255,0.06); }
+  90%  { transform: translateX(1px);   background-color: rgba(255,255,255,0.12); }
 
-  95%  { transform: translateX(-3px);  background-color: rgba(255,255,255,0.03); }
+  95%  { transform: translateX(-1px);  background-color: rgba(255,255,255,0.03); }
   100% { transform: translateX(0);     background-color: rgba(255,255,255,0); }
 }
 
@@ -389,15 +386,15 @@ footer {
 /* 縦揺れアニメーション */
 @keyframes window-shake {
   0%   { transform: translateY(0); }
-  10%  { transform: translateY(-20px); }
-  20%  { transform: translateY(20px); }
-  30%  { transform: translateY(-15px); }
-  40%  { transform: translateY(15px); }
-  50%  { transform: translateY(-10px); }
-  60%  { transform: translateY(10px); }
-  70%  { transform: translateY(-6px); }
-  80%  { transform: translateY(6px); }
-  90%  { transform: translateY(-3px); }
+  10%  { transform: translateY(-5px); }
+  20%  { transform: translateY(5px); }
+  30%  { transform: translateY(-3px); }
+  40%  { transform: translateY(3px); }
+  50%  { transform: translateY(-2px); }
+  60%  { transform: translateY(2px); }
+  70%  { transform: translateY(-1px); }
+  80%  { transform: translateY(1px); }
+  90%  { transform: translateY(-1px); }
   100% { transform: translateY(0); }
 }
 
@@ -509,4 +506,85 @@ footer {
 .filter-item input[type="checkbox"] {
   transform: scale(1.2);
   accent-color: white; /* 白チェックで見やすい */
+}
+
+.work-info {
+  border-left: 2px solid #5c5e63; /* 青ライン（C++タグ色に合わせてもOK） */
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.info-label {
+  width: 160px;
+  font-weight: 700;
+  color: #333;
+}
+.info-label::before {
+  content: "▪ ";
+  color: #2563eb; /* 好きな色に変更可能 */
+}
+.info-value {
+  flex: 1;
+  color: #111;
+}
+
+/* 最後の行の余白を消す */
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  background: #fdfdfd;
+  border: 2px solid #d0d0d0;
+  border-right: 10px solid #5c5e63; /* 青ライン（C++タグ色に合わせてもOK） */
+  border-radius: 12px;
+
+  padding: 16px 20px;
+  margin: 20px auto;   /* ← 中央寄せ */
+
+  max-width: 800px;    /* ← 横幅の最大値を決める */
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* 顔写真スペース（画像が無い場合はダミー） */
+.profile-photo {
+  width: 90px;
+  height: 110px;
+  background: #e5e5e5;
+  border: 3px solid #7a7979;
+  border-radius: 8px;
+}
+
+/* 情報部分 */
+.profile-info {
+  flex: 1;
+}
+
+.profile-info-row {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.profile-info-label {
+  width: 120px;
+  font-weight: 700;
+  color: #333;
+}
+
+.profile-info-value {
+  flex: 1;
+  color: #111;
 }

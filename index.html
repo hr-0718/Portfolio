@@ -18,11 +18,40 @@
     <!-- 自己紹介 -->
     <section id="about" class="clickable">
       <h2 class="title">自己紹介</h2>
-      <p>
+
+      <!-- 自己紹介文 -->
+      <p class="about-text">
         ゲームの“手触り”や操作感にこだわって制作しているゲームプログラマー志望の学生です。<br>
         C++ と DirectX11 を用いた個人制作や、チームでのコンテスト出展を通じて、
         プレイヤーが気持ちよく遊べる挙動やカメラ、エフェクトの実装に力を入れています。
       </p>
+
+      <!-- プロフィールカード -->
+      <div class="profile-card">
+        <div class="profile-photo" style="background-image: url('assets/profile/myphoto.jpg');background-size: 100% 100%;"></div>
+
+        <div class="profile-info">
+          <div class="profile-info-row">
+            <span class="profile-info-label">氏名</span>
+            <span class="profile-info-value">原 聡吾</span>
+          </div>
+
+          <div class="profile-info-row">
+            <span class="profile-info-label">肩書</span>
+            <span class="profile-info-value">ゲームプログラマー志望 / 専門学生</span>
+          </div>
+
+          <div class="profile-info-row">
+            <span class="profile-info-label">得意分野</span>
+            <span class="profile-info-value">C++ / DirectX11 / ゲーム挙動 / カメラ / エフェクト</span>
+          </div>
+
+          <div class="profile-info-row">
+            <span class="profile-info-label">活動</span>
+            <span class="profile-info-value">個人制作・チーム制作・コンテスト出展</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 代表作品 -->
@@ -42,10 +71,13 @@
             <span class="work-tag tag-directx">DirectX11</span>
             <span class="work-tag tag-etc">3Dアクション</span>
           <h3>これまで学んだことの集大成</h3>
+          <div class="work-info">
+            <div class="info-row">
+              <span class="info-label">制作時期 / 期間</span>
+              <span class="info-value">2025年 11月～ / 制作中</span>
+            </div>
+          </div>
           <p>
-            ■制作時期 / 期間<br>
-            　2025年 11月～ / 制作中<br>
-            <br>
             プレイヤーの操作感とスロー演出などの時間制御、カメラワークに重点を置いた3Dアクションゲームです。<br>
             チーム制作で詰め切れなかった部分の反省を活かし、より高品質なプレイ体験を届けられるように作っています。<br>
             独自エンジンを使って制作し、プレイヤーのステート管理やエネミー挙動、画面エフェクトなどを一通り実装しました。<br>
@@ -68,10 +100,13 @@
             <span class="work-tag tag-directx">DirectX11</span>
             <span class="work-tag tag-etc">ゲームエンジン</span>
           <h3>独自エンジンの開発に挑戦</h3>
+          <div class="work-info">
+            <div class="info-row">
+              <span class="info-label">制作時期 / 期間</span>
+              <span class="info-value">2025年 6月～ / ゲームを作りつつ改良中</span>
+            </div>
+          </div>
           <p>
-            ■制作時期 / 期間<br>
-                2025年 6月～ / ゲームを作りつつ改良中<br>
-            <br>
             より良い“手触り”を実現するには、演出の作りやすさや操作感の調整に特化した仕組みを自分で設計する必要があると考え、
             フレームワークの学習も兼ねて独自のゲームエンジン開発に取り組みました。
             スロー演出を自然に見せるための細かなタイムスケール管理や、
@@ -99,14 +134,23 @@
             <span class="work-tag tag-etc">学校精鋭チーム</span>
             <span class="work-tag tag-etc">3Dアクション</span>
           <h3>カプコンコンテスト出展作品</h3>
+          <div class="work-info">
+            <div class="info-row">
+              <span class="info-label">制作時期 / 期間</span>
+              <span class="info-value">2025年 4月 ～ 9月末 / 6ヵ月</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">役割</span>
+              <span class="info-value">プログラマー (品質管理、ボスエネミー制作)</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">制作人数</span>
+              <span class="info-value">19 人</span>
+            </div>
+          </div>
           <p>
-            ■制作時期 / 期間<br>
-            　　2025年 4月 ～ 9月末 / 6ヵ月<br>
-            ■役割<br>
-            　　プログラマー (品質管理、ボスエネミー制作)<br>
-            ■制作人数<br>
-            　　19 人<br>
-            <br>
             学校選抜チームのプログラマーとして参加し、操作感やボスエネミー挙動の実装を担当しました。
             限られた期間の中で見積もりの甘さから詰め切れない部分もありましたが、
             仕様調整やチーム内コミュニケーションを重ねて“手触り”の改善に注力し、
@@ -133,14 +177,23 @@
             <span class="work-tag tag-award">受賞済み</span>
             <span class="work-tag tag-etc">2.5D</span>
           <h3>初めてのチーム制作/ゲームクリエイター甲子園</h3>
+          <div class="work-info">
+            <div class="info-row">
+              <span class="info-label">制作時期 / 期間</span>
+              <span class="info-value">2024年 10月 ～ 2月末 / 5ヵ月</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">役割</span>
+              <span class="info-value">リードプログラマー (メインプログラマー)</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">制作人数</span>
+              <span class="info-value">14 人</span>
+            </div>
+          </div>
           <p>
-            ■制作時期 / 期間<br>
-            　　2024年 10月 ～ 2月末 / 5ヵ月<br>
-            ■役割<br>
-            　　リードプログラマー (メインプログラマー)<br>
-            ■制作人数<br>
-            　　14 人<br>
-            <br>
             2024年の進級制作展で制作した、敵を囲んで一気に倒すアクションゲームです。
             初めてのチーム制作でリードプログラマーを担当し、連携やタスク管理の難しさを実感しながらも、
             最後までクオリティ向上に取り組みました。その結果、金賞を受賞することができました。
