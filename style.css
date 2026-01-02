@@ -243,16 +243,74 @@ section {
   background-color:#909090;
 }
 
-.work-thumb {
+
+.work-thumb-wrapper {
+  position: relative;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
   border-radius: 6px 6px 0 0;
-  margin-bottom: 12px;
-  
-  aspect-ratio: 16 / 9; /* 好きな比率に統一 */
-  object-fit: contain;  /* 画像を縮小して全体を表示 */
-  background-color: #000; /* 黒背景（透明にしたいなら transparent） */
+  margin-bottom: 16px;
+  overflow: hidden;
+  background-color: #000;
 }
+
+.work-thumb,
+.video-container iframe,
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  position: absolute; /* ← これでもOKだが */
+}
+
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+/* 再生ボタン */
+.movie-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    pointer-events: visible;
+}
+
+/* 再生アイコン（三角形） */
+.movie-play-button::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 22px solid rgba(0, 0, 0, 0.75);
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+}
+
+/* ホバー演出 */
+.movie-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.45);
+}
+
 
 .works-grid {
     display: grid;
@@ -297,6 +355,43 @@ section {
     font-size: 0.8rem;
     color: #6b7280;
     margin-bottom: 6px;
+}
+.work-headline {
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-align: center;
+
+  background: #111;
+  color: #fff;
+
+  padding: 10px 14px;
+  margin: 16px 0;
+  border-radius: 6px;
+
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 左右に稲妻風の装飾 */
+.work-headline::before,
+.work-headline::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+}
+
+.work-headline::before {
+  left: -10px;
+  transform: translateY(-50%) rotate(3deg);
+}
+
+.work-headline::after {
+  right: -10px;
+  transform: translateY(-50%) rotate(-3deg);
 }
 
 a {
@@ -440,6 +535,7 @@ footer {
 .work-card.hidden {
   display: none;
 }
+
 
 .filter-box {
   border: 2px solid #ddd;
@@ -588,3 +684,108 @@ footer {
   flex: 1;
   color: #111;
 }
+
+.play-button {
+  display: block;
+  width: 80%;                 /* ← 横幅を少し狭める */
+  max-width: 720px;           /* ← 大きくなりすぎないように */
+  margin: 16px auto 20px;     /* ← 中央寄せ */
+
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+
+  background: linear-gradient(180deg, #1bd25b, #18b953);
+  color: #fff;
+
+  border-radius: 10px;
+
+  /* 特別感のある枠線（外側） */
+  border: 3px solid #0d5f2c;
+
+  /* 内側に光沢感を出す */
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.25), /* 内側の光 */
+    10 4px 10px rgba(0,0,0,0.25);            /* 外側の影 */
+
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.play-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.3),
+    0 6px 14px rgba(0,0,0,0.35);
+}
+
+.play-button:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.2),
+    0 3px 8px rgba(0,0,0,0.2);
+}
+
+.play-button.disabled {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+ 
+.play-button-wrapper {
+  position: relative; /* ← これが基準になる */
+  width: 90%;
+  max-width: 720px;
+  margin: 16px auto 20px;
+}
+ 
+.play-button {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+ 
+  background: linear-gradient(180deg, #1bd25b, #18b953);
+  color: #fff;
+  border-radius: 10px;
+  border: 3px solid #0d5f2c;
+ 
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.25),
+    0 4px 10px rgba(0,0,0,0.25);
+ 
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+ 
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+ 
+.play-toast {
+  position: absolute;
+  top: 0;               /* ← ボタンと完全に同じ位置 */
+  left: 0;
+  right: 0;
+ 
+  opacity: 0;
+  pointer-events: none;
+ 
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+ 
+  transition: opacity 0.3s ease;
+}
+ 
+.play-toast.show {
+  opacity: 1;
+}
+ 

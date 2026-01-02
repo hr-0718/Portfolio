@@ -66,3 +66,117 @@ document.addEventListener("DOMContentLoaded", () => {
   // チェックボックスが変わるたびにフィルタ適用
   checks.forEach(ch => ch.addEventListener("change", applyFilter));
 });
+
+
+ 
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".play-button");
+ 
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const wrapper = btn.parentElement;
+      const toast = wrapper.querySelector(".play-toast");
+ 
+      if (!toast) return; // toast がないカードは何もしない
+ 
+      btn.style.opacity = "0";     // ボタンを消す
+      toast.classList.add("show"); // toast を表示
+ 
+      setTimeout(() => {
+        toast.classList.remove("show");
+        btn.style.opacity = "1";   // ボタンを戻す
+      }, 3000);
+    });
+  });
+});
+
+
+document.querySelectorAll('.movie-play-button').forEach(button => {
+    button.addEventListener('click', async () => {
+
+        // 親要素（.work-thumb-wrapper）
+        const wrapper = button.parentElement;
+
+        // サムネ画像を取得
+        const thumb = wrapper.querySelector('.work-thumb');
+        if (!thumb) return;
+
+        // data-video を取得
+        const videoSrc = thumb.dataset.video;
+        if (!videoSrc) return;
+
+        // video-container を取得
+        const container = wrapper.querySelector('.video-container');
+        if (!container) return;
+
+
+        // すでに動画がある場合は再生するだけ
+        if (container.querySelector('video') || container.querySelector('iframe')) {
+            return;
+        }
+
+        // YouTubeリンクかどうか判定
+        if (videoSrc.includes('youtube.com') || videoSrc.includes('youtu.be')) {
+            // サムネを非表示
+            thumb.style.display = 'none';
+            button.style.display = 'none';
+
+            // YouTube埋め込みURLに変換
+            const embedUrl = convertToYouTubeEmbed(videoSrc);
+
+            const iframe = document.createElement('iframe');
+            iframe.src = embedUrl;
+            iframe.allow =
+                "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+
+            container.appendChild(iframe);
+        } else {
+            // 通常のMP4動画
+
+            // ▼ ローカル動画の存在チェック
+            const exists = await checkFileExists(videoSrc);
+            if (!exists) {
+                console.warn(`File not found: ${videoSrc}`);
+                return; // ← 処理しない
+            }
+
+            // サムネを非表示
+            thumb.style.display = 'none';
+            button.style.display = 'none';
+            
+
+            const video = document.createElement('video');
+            video.src = videoSrc;
+            video.controls = true;
+            video.autoplay = true;
+            video.muted = true;
+            container.appendChild(video);
+        }
+    });
+});
+
+// ▼ ファイル存在チェック関数
+async function checkFileExists(url) {
+    try {
+        const res = await fetch(url, { method: "HEAD" });
+        return res.ok;
+    } catch (e) {
+        return false;
+    }
+}
+
+// YouTube URL → 埋め込みURLに変換
+function convertToYouTubeEmbed(url) {
+    let id = "";
+
+    if (url.includes("watch?v=")) {
+        id = url.split("watch?v=")[1];
+    } else if (url.includes("youtu.be/")) {
+        id = url.split("youtu.be/")[1];
+    }
+
+    const origin = window.location.origin; // ローカルサーバーでも有効
+
+    return `https://www.youtube.com/embed/${id}?autoplay=1&origin=${origin}`;
+}

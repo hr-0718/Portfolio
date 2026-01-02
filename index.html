@@ -59,8 +59,11 @@
       <h2 class="title">自信作</h2>
       <div class="works-grid">
         <article class="work-card clickable">
-            <!-- 作品サムネイル画像 -->
-            <img class="work-thumb" src="assets/resistar_thumbnail.png" alt="嘘星のレジスター サムネイル">
+          <div class="work-thumb-wrapper">
+              <img class="work-thumb" src="assets/resistar_thumbnail.png" alt="嘘星のレジスター サムネイル"
+               data-video="assets/resistar_thumbnailMovie.mp4">
+              <div class="video-container"></div>
+          </div>
 
           <div class="gametitle">
             <span class="title-text">嘘星のレジスター</span>
@@ -70,7 +73,13 @@
             <span class="work-tag tag-cpp">C++</span>
             <span class="work-tag tag-directx">DirectX11</span>
             <span class="work-tag tag-etc">3Dアクション</span>
-          <h3>これまで学んだことの集大成</h3>
+          
+          <div class="play-button-wrapper">
+            <a class="play-button" target="_blank">▶ 作品をプレイ（準備中）</a>
+            <div class="play-toast">準備中です</div>
+          </div>
+
+          <h3 class="work-headline">これまで学んだことの集大成</h3>
           <div class="work-info">
             <div class="info-row">
               <span class="info-label">制作時期 / 期間</span>
@@ -82,14 +91,15 @@
             チーム制作で詰め切れなかった部分の反省を活かし、より高品質なプレイ体験を届けられるように作っています。<br>
             独自エンジンを使って制作し、プレイヤーのステート管理やエネミー挙動、画面エフェクトなどを一通り実装しました。<br>
           </p>
-          <p>
-            作品をプレイ: <a href="" target="_blank" download>準備中</a>
-          </p>
         </article>
 
         <article class="work-card clickable">
-            <!-- 作品サムネイル画像 -->
-            <img class="work-thumb" src="assets/hrengine_thumbnail_title.png" alt="HR-Engine サムネイル">
+          <div class="work-thumb-wrapper">
+              <img class="work-thumb" src="assets/hrengine_thumbnail_title.png" alt="HR-Engine サムネイル"
+               data-video="assets/hrengine_thumbnail_titleMovie.mp4">
+              <div class="video-container"></div>
+          </div>
+
 
           <div class="gametitle">
             <span class="title-text">HR-Engine</span>
@@ -99,7 +109,8 @@
             <span class="work-tag tag-cpp">C++</span>
             <span class="work-tag tag-directx">DirectX11</span>
             <span class="work-tag tag-etc">ゲームエンジン</span>
-          <h3>独自エンジンの開発に挑戦</h3>
+          <a class="play-button disabled" target="_blank"></a>
+          <h3 class="work-headline">独自エンジンの開発に挑戦</h3>
           <div class="work-info">
             <div class="info-row">
               <span class="info-label">制作時期 / 期間</span>
@@ -120,8 +131,13 @@
             <!-- <span class="work-tag tag-unity">Unity</span> -->
 
         <article class="work-card clickable">
-            <!-- 作品サムネイル画像 -->
-            <img class="work-thumb" src="assets/atea_thumbnail.png" alt="ATEA: THE LOST SEEKER サムネイル">
+          <div class="work-thumb-wrapper">
+              <img class="work-thumb" src="assets/atea_thumbnail.png" alt="ATEA: THE LOST SEEKER サムネイル"
+               data-video="https://www.youtube.com/watch?v=p1rDLBvSIDc">
+              <div class="video-container"></div>
+              <div class="movie-play-button"></div>
+
+          </div>
 
           <div class="gametitle">
             <span class="title-text">ATEA: THE LOST SEEKER</span>
@@ -133,7 +149,8 @@
             <span class="work-tag tag-award">受賞済み</span>
             <span class="work-tag tag-etc">学校精鋭チーム</span>
             <span class="work-tag tag-etc">3Dアクション</span>
-          <h3>カプコンコンテスト出展作品</h3>
+          <a class="play-button disabled" target="_blank"></a>
+          <h3 class="work-headline">カプコンコンテスト出展作品</h3>
           <div class="work-info">
             <div class="info-row">
               <span class="info-label">制作時期 / 期間</span>
@@ -163,8 +180,13 @@
 
         
         <article class="work-card clickable">
-            <!-- 作品サムネイル画像 -->
-            <img class="work-thumb" src="assets/circlen_thumbnail.png" alt="さーくるん サムネイル">
+          <div class="work-thumb-wrapper">
+              <img class="work-thumb"  src="assets/circlen_thumbnail.png" alt="さーくるんサムネイル"
+               data-video="https://youtu.be/AaB6lTVwrAg">
+              <div class="video-container"></div>
+              <div class="movie-play-button"></div>
+
+          </div>
 
           <div class="gametitle">
             <span class="title-text">さーくるん！</span>
@@ -176,7 +198,15 @@
             <span class="work-tag tag-directx">DirectX11</span>
             <span class="work-tag tag-award">受賞済み</span>
             <span class="work-tag tag-etc">2.5D</span>
-          <h3>初めてのチーム制作/ゲームクリエイター甲子園</h3>
+
+          <div class="play-button-wrapper">
+            <a class="play-button" href="https://gameparade.creators-guild.com/works/3117" target="_blank">
+              ▶ 作品をプレイ（みんなのゲームパレード）
+            </a>
+            <div class="play-toast">興味を持ってくださりありがとうございます！</div>
+          </div>
+
+          <h3 class="work-headline">初めてのチーム制作/ゲームクリエイター甲子園</h3>
           <div class="work-info">
             <div class="info-row">
               <span class="info-label">制作時期 / 期間</span>
@@ -197,10 +227,6 @@
             2024年の進級制作展で制作した、敵を囲んで一気に倒すアクションゲームです。
             初めてのチーム制作でリードプログラマーを担当し、連携やタスク管理の難しさを実感しながらも、
             最後までクオリティ向上に取り組みました。その結果、金賞を受賞することができました。
-          </p>
-            
-          <p>
-            作品をプレイ: <a href="https://gameparade.creators-guild.com/works/3117" target="_blank">みんなのゲームパレード</a>
           </p>
         </article>
       </div>
@@ -253,7 +279,7 @@
     &copy; 2025 Sogo Hara
   </footer>
 
-<script src="main.js?v=1.0.1"></script>
+<script src="main.js?v=1.0.2"></script>
 
 </body>
 
